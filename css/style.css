@@ -1,0 +1,22 @@
+/* ============================================= */
+/*                  Cover                        */
+/* ============================================= */
+#cover {
+  min-height: 100vh;
+}
+
+#intro {
+  height: 80vh;
+}
+@media screen and (min-width: 576px) {
+  #intro {
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  #intro {
+    height: 55vh;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
