@@ -7,7 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body id="home" data-bs-spy="scroll" data-bs-target=".navbar" data-offset="100">
         <header>
             <!-- navigation bar -->
             <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
@@ -17,10 +17,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div id= "navigation" class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Portfolio</a>
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="#about">About</a>
                     <a class="nav-link" href="#">Contact</a>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
             </nav>
             <!-- /navigation bar -->
             <!-- cover -->
-            <div class="container-fluid">
+            <div class="container-fluid hidden">
                 <div id="cover" class="row flex-column-reverse">
                     <div id="intro" class="col-md-12 ms-md-2">
                         <h1 id="start" class="display-3">
@@ -43,73 +43,129 @@
         </header>
         <main>
             <!-- projects grid -->
-            <div class="container text-center">
-                <h2 class="my-5">Projects</h2>
+            <div class="container main-container text-center">
+                <h2 id="portfolio" class="display-3 my-5">Projects</h2>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 hidden">
                         <div class="card mb-4">
-                            <img src="img/webapp_dashboard3.png" class="card-img-top image-fluid" alt="picture of webapp dashboard">
-                            <div class="card-body">
+                            <img src="img/webapp_dashboard4.png" class="card-img-top image-fluid" alt="picture of webapp dashboard">
+                            <div class="card-body d-flex flex-column">
                               <h5 class="card-title">WebApp Dasboard</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text">I built a Web App dashboard interface from scratch (without the use of any libraries or frameworks). This gave me the opportunity to put together many of the technologies that I built proficiency in, namely <strong>HTML5</strong>,<strong>Sass</strong>, and <strong>Javascript</strong> to build a mobile-first responsive front-end interface.</p>
+                              <div class="btn-group mt-auto" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary">Website</button>
+                                <button type="button" class="btn btn-outline-primary">Code</button>
+                              </div>  
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 hidden">
                         <div class="card mb-4">
                             <img src="img/employee_directory1.png" class="card-img-top" alt="image of employee directory">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                               <h5 class="card-title">Employee Directory - Web API</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text">I built an employee directory from scratch (without the use of any libraries or frameworks), that is constantly up to date with the latest employee list for Awesome Startup. I put in search functionality and modals for deeper dives. I achieved this by using the <strong>Fetch API</strong> and asynchronous functionality in <strong>Javascript</strong>.</p>
+                              <div class="btn-group mt-auto" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary">Website</button>
+                                <button type="button" class="btn btn-outline-primary">Code</button>
+                              </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 hidden">
                         <div class="card mb-4">
                             <img src="img/gameshowapp1.png" class="card-img-top" alt="image of game show app">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                               <h5 class="card-title">Game Show App</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text">I built a game show app with <strong>Javascript</strong> from scratch (without the use of libraries or frameworks). In the game the user must guess a phrase on the screen by selecting letters (like Wheel of Fortune.) The player has 5 wrong guesses before they lose the game.</p>
+                              <div class="btn-group mt-auto" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary">Website</button>
+                                <button type="button" class="btn btn-outline-primary">Code</button>
+                              </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 hidden">
                         <div class="card mb-4">
-                            <img src="img/photo_gallery1.png" class="card-img-top" alt="image of interactive photo gallery">
-                            <div class="card-body">
+                            <img src="img/photo_gallery2.png" class="card-img-top" alt="image of interactive photo gallery">
+                            <div class="card-body d-flex flex-column">
                               <h5 class="card-title">Interactive Photo Gallery</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text">I built a responsive photo gallery with <strong>HTML</strong> and <strong>Sass</strong>. I also added <strong>Javascript</strong> plug-ins to give the page lightbox and search filter functionality.</p>
+                              <div class="btn-group mt-auto" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary">Website</button>
+                                <button type="button" class="btn btn-outline-primary">Code</button>
+                              </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 hidden">
                         <div class="card mb-4">
                             <img src="img/online_registration1.png" class="card-img-top" alt="image of online registration form">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                               <h5 class="card-title">Online Registration Form</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text">I put together an online registration form using <strong>HTML</strong> form elements.</p>
+                              <div class="btn-group mt-auto" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary">Website</button>
+                                <button type="button" class="btn btn-outline-primary">Code</button>
+                              </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 hidden">
                         <div class="card mb-4">
                             <img src="img/style_guide1.png" class="card-img-top" alt="image of web style guide">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                               <h5 class="card-title">Web Style Guide - SCSS</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text">I built a custom style guide with <strong>Sass</strong> that could be used to bootstrap and speed up future development for a fictional organization named Circles.</p>
+                              <div class="btn-group mt-auto" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary">Website</button>
+                                <button type="button" class="btn btn-outline-primary">Code</button>
+                              </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- /projects grid -->
+            <!-- About -->
+            <div id="about" class="container mb-5">
+                <h2 id="h2-about" class="display-3 text-center pb-2 pt-3">About</h2>
+                <img class="image-fluid my-5 d-block mx-auto hidden" src="img/DSC09595.jpg" alt="portrait of Vic Gupta">
+                <p class="mt-3 mx-md-2 mx-lg-5 hidden">Hey! I’m Vic and I’m a Front End developer. HTML, CSS, SVG and Javascript are the raw materials I use in manipulating the fabric of the web. I love working on the web and making sure it continues to be a place for everyone and our creative, personal, and weird passions.
+                <p class="mt-1 mx-md-2 mx-lg-5 hidden">I come from a B2B Saas Business Development background. During the pandemic and ensuing lockdowns I developed a passion for coding, and began learning the magic of conjuring up websites from nothing. I recently received a Techdegree from Treehouse in Front End Web Development, and am continuing my learning journey by increasing my knowledge in React & NextJS frameworks, REST API, Express, Node.js and SQL.</p>
+                <p class="mt-1 mx-md-2 mx-lg-5 hidden">The projects that I have done are meant to showcase the grasp that I have of the technologies that make up the web. My talents and passions are my guide, as I train for Front End Developer life in the next chapter of my career.</p>
+            </div>
+            <!-- /about -->
         </main>
+        <footer>
+            <div class="container text-center">
+                <div class="row justify-content-md-between">
+                    <div class="col-md-9">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="linkedin-bg" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md text-md-right align-self-md-center">   
+                        <small id="copyright">&copy; 2023 Vic Gupta</small>
+                    </div>  
+                </div>
+            </div>
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

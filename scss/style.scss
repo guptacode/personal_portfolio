@@ -1,4 +1,74 @@
 /* ============================================= */
+/*                  Animation                    */
+/* ============================================= */
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s .2s ease-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 768px){
+    .col-md-6:nth-child(even){
+        transition-delay: 0.4s;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .col-md-6:nth-child(2), .col-md-6:nth-child(4){
+        transition-delay: 0.4s;
+    }
+    .col-md-6:nth-child(3), .col-md-6:nth-child(6){
+        transition-delay: 0.6s;
+    }
+}
+
+/* ============================================= */
+/*                  Navigation                   */
+/* ============================================= */
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link:before, .nav-link:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: black;
+    transition: all 0.3s;
+}
+
+.nav-link:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+.nav-link:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+.nav-link:hover:before, .nav-link:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}
+
+
+/* ============================================= */
 /*                  Cover                        */
 /* ============================================= */
 
@@ -15,3 +85,73 @@
         height: 55vh;
     }
 }
+
+/* ============================================= */
+/*                  Portfolio                    */
+/* ============================================= */
+
+#portfolio {
+    scroll-margin-top: 100px;
+}
+
+.container .card {
+    min-height: 475px;
+}
+
+.main-container {
+    scroll-behavior: smooth;
+}
+
+/* ============================================= */
+/*                     About                     */
+/* ============================================= */
+
+// #about {
+//     background:
+//         url("../img/DSC09595.jpg")
+//         center/contain
+//         no-repeat;
+//         // coral;
+//     // background-blend-mode: overlay;
+//     width:100%;
+//     min-height: 100vh;
+//     @media screen and (min-width: 565px) {
+//         width: 100%;
+//         background-size: cover;
+//     }
+//      @media screen and (min-width: 992px) {
+//         // background-position: center top;
+//     }
+// }
+
+// #h2-about {
+//     padding-top: 40rem;
+// }
+
+#about {
+    scroll-margin-top: 80px;
+}
+
+#about img {
+    width: 100%;
+    max-width: 395px;
+}
+
+/* ============================================= */
+/*                     Footer                    */
+/* ============================================= */
+
+a #linkedin {
+    transition: all 0.6s;
+}
+
+a #linkedin:hover {
+    transform: scale(1.2) rotate(10deg);
+    .linkedin-bg {
+        fill: #0072b1; 
+    }
+}
+
+// .linkedin-bg:hover {
+//     fill: #0072b1;
+// }
