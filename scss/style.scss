@@ -1,4 +1,15 @@
 /* ============================================= */
+/*                  Utilities                    */
+/* ============================================= */
+
+$color-primary: #3B3B3B;
+$color-secondary: #FAFAFA;
+$color-teritary: #7A7A7A;
+$color4: #BABABA;
+$color5: #E0E0E0;
+$color-accent: #0dcaf0;
+
+/* ============================================= */
 /*                  Animation                    */
 /* ============================================= */
 
@@ -6,7 +17,7 @@
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
-    transition: all 1s .2s ease-out;
+    transition: all 1s .2s cubic-bezier(.47,-0.26,.47,1.26);
 }
 
 .show {
@@ -34,43 +45,62 @@
 /*                  Navigation                   */
 /* ============================================= */
 
-.nav-link {
-    position: relative;
+#nav-top {
+    background-color: $color-secondary;
+    .navbar-brand {
+        color: $color-primary;
+    }
 }
 
-.nav-link:before, .nav-link:after
+.top {
+    position: relative;
+    color: $color-primary;
+}
+
+.top:before, .top:after
 {
     position: absolute;
     opacity: 0;
     width: 0%;
     height: 2px;
     content: '';
-    background: black;
+    background: $color-accent;
     transition: all 0.3s;
 }
 
-.nav-link:before
+.top:before
 {
     left: 0px;
     top: 0px;
 }
 
-.nav-link:after
+.top:after
 {
     right: 0px;
     bottom: 0px;
 }
 
-.nav-link:hover:before, .nav-link:hover:after
+.top:hover:before, .top:hover:after
 {
     opacity: 1;
     width: 100%;
 }
 
+#navtop .nav-link:focus, #nav-top .nav-link:hover {
+    color: $color-accent;
+}
+
+#navbarNavAltMarkup .active {
+    color: $color-accent;
+}
 
 /* ============================================= */
 /*                  Cover                        */
 /* ============================================= */
+
+#cover-container {
+    background-color: $color-secondary;
+}
 
 #cover {
     min-height: 100vh;
@@ -84,22 +114,66 @@
     @media screen and (min-width: 768px) {
         height: 55vh;
     }
+    a {
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+    }
+    p {
+        color: $color-teritary;
+    }
+}
+
+#start {
+    font-weight: 500;
+}
+
+#view-work {
+    color: $color-teritary;
+    text-decoration-color: $color-accent;
+    &:hover {
+        color: $color-primary;
+    }
 }
 
 /* ============================================= */
 /*                  Portfolio                    */
 /* ============================================= */
 
+.main-container {
+    scroll-behavior: smooth;
+}
+
+#portfolio-wrapper {
+    color: $color-primary;
+    background-color: $color-secondary;
+}
+
 #portfolio {
     scroll-margin-top: 100px;
 }
 
-.container .card {
+.card {
     min-height: 475px;
-}
-
-.main-container {
-    scroll-behavior: smooth;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        top: -4px;
+        border: 1px solid #cccccc;
+    }
+    &:hover:before {
+        transform: scale(2.15);
+    }
+    color: $color-secondary;
+    background-color: $color-primary;
+    @media screen and (min-width: 768px){
+        min-height: 507px;
+    }
+    @media screen and (min-width: 992px){
+        min-height: 559px;
+    }
 }
 
 /* ============================================= */
@@ -141,7 +215,7 @@
 /*                     Footer                    */
 /* ============================================= */
 
-a #linkedin {
+#linkedin, #github {
     transition: all 0.6s;
 }
 
@@ -152,6 +226,22 @@ a #linkedin:hover {
     }
 }
 
-// .linkedin-bg:hover {
-//     fill: #0072b1;
-// }
+#github:hover {
+    transform: scale(1.2) rotate(10deg);
+    .github-bg {
+        fill: #6e5494; 
+    }
+}
+
+.nav-foot {
+    color: $color-primary;
+    &:hover {
+        color: #0dcaf0;
+    }
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: $color-primary;
+    background-color: $color-secondary;
+}

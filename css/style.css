@@ -1,11 +1,14 @@
 /* ============================================= */
+/*                  Utilities                    */
+/* ============================================= */
+/* ============================================= */
 /*                  Animation                    */
 /* ============================================= */
 .hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: all 1s 0.2s ease-out;
+  transition: all 1s 0.2s cubic-bezier(0.47, -0.26, 0.47, 1.26);
 }
 
 .show {
@@ -31,38 +34,58 @@
 /* ============================================= */
 /*                  Navigation                   */
 /* ============================================= */
-.nav-link {
-  position: relative;
+#nav-top {
+  background-color: #FAFAFA;
+}
+#nav-top .navbar-brand {
+  color: #3B3B3B;
 }
 
-.nav-link:before, .nav-link:after {
+.top {
+  position: relative;
+  color: #3B3B3B;
+}
+
+.top:before, .top:after {
   position: absolute;
   opacity: 0;
   width: 0%;
   height: 2px;
   content: "";
-  background: black;
+  background: #0dcaf0;
   transition: all 0.3s;
 }
 
-.nav-link:before {
+.top:before {
   left: 0px;
   top: 0px;
 }
 
-.nav-link:after {
+.top:after {
   right: 0px;
   bottom: 0px;
 }
 
-.nav-link:hover:before, .nav-link:hover:after {
+.top:hover:before, .top:hover:after {
   opacity: 1;
   width: 100%;
+}
+
+#navtop .nav-link:focus, #nav-top .nav-link:hover {
+  color: #0dcaf0;
+}
+
+#navbarNavAltMarkup .active {
+  color: #0dcaf0;
 }
 
 /* ============================================= */
 /*                  Cover                        */
 /* ============================================= */
+#cover-container {
+  background-color: #FAFAFA;
+}
+
 #cover {
   min-height: 100vh;
 }
@@ -80,20 +103,68 @@
     height: 55vh;
   }
 }
+#intro a {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+#intro p {
+  color: #7A7A7A;
+}
+
+#start {
+  font-weight: 500;
+}
+
+#view-work {
+  color: #7A7A7A;
+  text-decoration-color: #0dcaf0;
+}
+#view-work:hover {
+  color: #3B3B3B;
+}
 
 /* ============================================= */
 /*                  Portfolio                    */
 /* ============================================= */
+.main-container {
+  scroll-behavior: smooth;
+}
+
+#portfolio-wrapper {
+  color: #3B3B3B;
+  background-color: #FAFAFA;
+}
+
 #portfolio {
   scroll-margin-top: 100px;
 }
 
-.container .card {
+.card {
   min-height: 475px;
+  top: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  color: #FAFAFA;
+  background-color: #3B3B3B;
 }
-
-.main-container {
-  scroll-behavior: smooth;
+.card:hover {
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -4px;
+  border: 1px solid #cccccc;
+}
+.card:hover:before {
+  transform: scale(2.15);
+}
+@media screen and (min-width: 768px) {
+  .card {
+    min-height: 507px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .card {
+    min-height: 559px;
+  }
 }
 
 /* ============================================= */
@@ -111,7 +182,7 @@
 /* ============================================= */
 /*                     Footer                    */
 /* ============================================= */
-a #linkedin {
+#linkedin, #github {
   transition: all 0.6s;
 }
 
@@ -120,6 +191,26 @@ a #linkedin:hover {
 }
 a #linkedin:hover .linkedin-bg {
   fill: #0072b1;
+}
+
+#github:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+#github:hover .github-bg {
+  fill: #6e5494;
+}
+
+.nav-foot {
+  color: #3B3B3B;
+}
+.nav-foot:hover {
+  color: #0dcaf0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: #3B3B3B;
+  background-color: #FAFAFA;
 }
 
 /*# sourceMappingURL=style.css.map */
