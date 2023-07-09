@@ -1,0 +1,49 @@
+/* ============================================= */
+/*                  Navigation                   */
+/* ============================================= */
+
+#nav-top {
+    background-color: $color-secondary;
+    .navbar-brand {
+        color: $color-primary;
+    }
+}
+
+.top {
+    position: relative;
+    color: $color-primary;
+}
+
+.top:before, .top:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: $color-accent;
+    transition: all 0.3s;
+}
+
+.top:before {
+    left: 0px;
+    top: 0px;
+}
+
+.top:after {
+    right: 0px;
+    bottom: 0px;
+}
+
+.top:hover:before, .top:hover:after, .top:focus:before, .top:focus:after {
+    opacity: 1;
+    width: 100%;
+}
+
+#navtop .nav-link:focus, #nav-top .nav-link:hover {
+    color: $color-accent;
+}
+
+#navbarNavAltMarkup .active {
+    color: $color-accent;
+}

@@ -4,6 +4,7 @@ const navigation = document.querySelector('#navigation');
 const mode = document.querySelector('#mode');
 const navBackground = document.querySelector('#nav-top');
 const brand = document.querySelector('.navbar-brand');
+const toggler = document.querySelector('#toggler-icon');
 const cover = document.querySelector('#cover-container');
 const h1 = document.querySelector('#start');
 const coverH2 = document.querySelectorAll('.fs-6');
@@ -20,12 +21,14 @@ const github = document.querySelector('.github-bg');
 const copyright = document.querySelector('#copyright');
 const lLink = document.querySelector('#linkedin-link');
 const gLink = document.querySelector('#github-link');
+const githubSVG = document.querySelector('#github');
+const linkedinSVG = document.querySelector('#linkedin');
 let setting = '';
 
 const colorPrimary = '#3B3B3B';
 const colorSecondary = '#FAFAFA';
 const colorTeritary = '#7A7A7A';
-const color4 = '#E0E0E0';
+const colorAccent = '#0dcaf0';
 const sun = `<svg id="modeSVG" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
             <path class="sun" d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
             </svg>`;
@@ -44,7 +47,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-
         }
     });
 });
@@ -78,9 +80,11 @@ function changeTextColor(c) {
 function darkMode() {
     replaceSVG(moon);
     changeTextColor(colorSecondary);
+    toggler.classList.add('navbar-dark');
+    navBackground.classList.add('navbar-dark');
     nodeBackgroundColors.forEach(node => node.style.backgroundColor = colorPrimary);
     h1.style.color = '#FFFFFF';
-    cards.forEach(card => card.style.backgroundColor = colorTeritary);
+    cards.forEach(card => card.style.backgroundColor = '#5A5A5A');
 }
 
 // Light mode function
@@ -88,6 +92,8 @@ function darkMode() {
 function lightMode() {
     replaceSVG(sun);
     changeTextColor(colorPrimary);
+    toggler.classList.remove('navbar-dark');
+    navBackground.classList.remove('navbar-dark');
     nodeBackgroundColors.forEach(node => node.style.backgroundColor = colorSecondary);
     h1.style.color = '#000000';
     viewWork.style.color = colorTeritary;
@@ -116,18 +122,69 @@ function originalState(node) {
     }
 }
 
+// Event Listeners for Navigation bars
+
+function changeState(element, on, off) {
+    element.addEventListener(on, () => element.style.color = colorAccent);
+    element.addEventListener(off, () => {
+        if (localStorage.getItem('mode') === 'dark'){
+            element.style.color = colorSecondary;    
+        } else {
+            element.style.color = colorPrimary; 
+        }
+    });
+}
+
+topNav.forEach(navLink => {
+    changeState(navLink, 'mouseover', 'mouseout');
+    changeState(navLink, 'focus', 'blur');
+});
+
+changeState(mode, 'mouseover', 'mouseout');
+changeState(mode, 'focus', 'blur');
+
+
+footNav.forEach(navLink => {
+    changeState(navLink, 'mouseover', 'mouseout');
+    changeState(navLink, 'focus', 'blur');
+});
+
+//Event listener for 'view my work' link
+
+function changeViewWork(on, off) {
+    viewWork.addEventListener(on, () => {
+        if (localStorage.getItem('mode') === 'dark'){
+            viewWork.style.color = colorAccent;    
+        } else {
+            viewWork.style.color = '#000000'; 
+        }
+    });
+    viewWork.addEventListener(off, () => {
+        if (localStorage.getItem('mode') === 'dark'){
+            viewWork.style.color = colorSecondary;    
+        } else {
+            viewWork.style.color = colorTeritary; 
+        }
+    });
+}
+
+changeViewWork('mouseover', 'mouseout');
+changeViewWork('focus', 'blur');
+
 // Event listeners for social svgs
 
-gLink.addEventListener('mouseover', () => {github.style.fill = '#6e5494'});
-lLink.addEventListener('mouseover', () => {linkedin.style.fill = '#0072b1'});
+function changeSocialSVG(svg, bg, on, off, themeColor) {
+    svg.addEventListener(on, () => bg.style.fill = themeColor);
+    svg.addEventListener(off, () => {
+        originalState(bg);  
+    });
+}   
 
-gLink.addEventListener('mouseout', () => {
-    originalState(github);  
-});
+changeSocialSVG(githubSVG, github, 'mouseover', 'mouseout', '#6e5494');
+changeSocialSVG(gLink, github, 'focus', 'blur', '#6e5494');
 
-lLink.addEventListener('mouseout', () => {
-    originalState(linkedin);  
-});
+changeSocialSVG(linkedinSVG, linkedin, 'mouseover', 'mouseout', '#0072b1');
+changeSocialSVG(lLink, linkedin, 'focus', 'blur', '#0072b1');
 
 // Event listener for dark and light mode
 
@@ -144,8 +201,7 @@ mode.addEventListener('click', (e) => {
         darkMode();
     } else {
         lightMode();
-    }
-    
+    }    
 })
 
 retrieveSettings();

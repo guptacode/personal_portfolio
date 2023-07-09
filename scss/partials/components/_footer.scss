@@ -1,0 +1,28 @@
+/* ============================================= */
+/*                     Footer                    */
+/* ============================================= */
+
+#linkedin, #github {
+    transition: all 0.6s;
+}
+
+a #linkedin:hover {
+    transform: scale(1.2) rotate(10deg);
+    .linkedin-bg {
+        fill: #0072b1; 
+    }
+}
+
+#github:hover {
+    transform: scale(1.2) rotate(10deg);
+    .github-bg {
+        fill: #6e5494; 
+    }
+}
+
+.nav-foot {
+    color: $color-primary;
+    &:hover {
+        color: #0dcaf0;
+    }
+}

@@ -1,0 +1,39 @@
+/* ============================================= */
+/*                  Portfolio                    */
+/* ============================================= */
+
+.main-container {
+    scroll-behavior: smooth;
+}
+
+#portfolio-wrapper {
+    color: $color-primary;
+    background-color: $color-secondary;
+}
+
+#portfolio {
+    scroll-margin-top: 100px;
+}
+
+.card {
+    min-height: 475px;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        top: -4px;
+        border: 1px solid #cccccc;
+    }
+    &:hover:before {
+        transform: scale(2.15);
+    }
+    color: $color-secondary;
+    background-color: $color-primary;
+    @media screen and (min-width: 768px){
+        min-height: 507px;
+    }
+    @media screen and (min-width: 992px){
+        min-height: 559px;
+    }
+}

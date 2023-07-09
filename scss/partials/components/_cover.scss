@@ -1,0 +1,41 @@
+/* ============================================= */
+/*                  Cover                        */
+/* ============================================= */
+
+#cover-container {
+    background-color: $color-secondary;
+}
+
+#cover {
+    min-height: 100vh;
+}
+
+#intro {
+    height: 80vh;
+    @media screen and (min-width: 576px) {
+        height: 70vh; 
+    } 
+    @media screen and (min-width: 768px) {
+        height: 55vh;
+    }
+    a {
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+    }
+    p {
+        color: $color-teritary;
+    }
+}
+
+#start {
+    font-weight: 500;
+}
+
+#view-work {
+    color: $color-teritary;
+    text-decoration-color: $color-accent;
+    &:hover {
+        color: $color-primary;
+    }
+}
