@@ -162,14 +162,28 @@ body {
 .card:hover:before {
   transform: scale(2.15);
 }
+
 @media screen and (min-width: 768px) {
-  .card {
-    min-height: 507px;
+  #card1, #card2, #card3, #card4 {
+    min-height: 560px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  #card5, #card6 {
+    min-height: 450px;
+  }
+}
+
 @media screen and (min-width: 992px) {
-  .card {
-    min-height: 559px;
+  #card1, #card2, #card3 {
+    min-height: 610px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #card4 {
+    min-height: 450px;
   }
 }
 

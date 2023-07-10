@@ -30,10 +30,28 @@
     }
     color: $color-secondary;
     background-color: $color-primary;
+}
+
+#card1, #card2, #card3, #card4 {
     @media screen and (min-width: 768px){
-        min-height: 507px;
+        min-height: 560px;    
     }
+} 
+
+#card5, #card6 {
+    @media screen and (min-width: 768px){
+        min-height: 450px;    
+    }
+}
+
+#card1, #card2, #card3 {
     @media screen and (min-width: 992px){
-        min-height: 559px;
+        min-height: 610px;    
+    }
+}
+
+#card4 {
+    @media screen and (min-width: 992px){
+        min-height: 450px;    
     }
 }
