@@ -1,6 +1,5 @@
 const hiddenElements = document.querySelectorAll('.hidden');
 const body = document.querySelector('body');
-const navigation = document.querySelector('#navigation');
 const mode = document.querySelector('#mode');
 const navBackground = document.querySelector('#nav-top');
 const brand = document.querySelector('.navbar-brand');
