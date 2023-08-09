@@ -32,7 +32,13 @@
     background-color: $color-primary;
 }
 
-#card1, #card2, #card3, #card4 {
+#card1, #card2 {
+    @media screen and (min-width: 768px){
+        min-height: 635px;    
+    }
+}
+
+#card3, #card4 {
     @media screen and (min-width: 768px){
         min-height: 560px;    
     }
