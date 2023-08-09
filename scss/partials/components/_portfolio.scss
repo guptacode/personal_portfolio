@@ -34,13 +34,13 @@
 
 #card1, #card2 {
     @media screen and (min-width: 768px){
-        min-height: 635px;    
+        min-height: 680px;    
     }
 }
 
 #card3, #card4 {
     @media screen and (min-width: 768px){
-        min-height: 560px;    
+        min-height: 618px;    
     }
 } 
 
@@ -48,16 +48,22 @@
     @media screen and (min-width: 768px){
         min-height: 450px;    
     }
+    @media screen and (min-width: 992px){
+        min-height: 645px;    
+    }
+    @media screen and (min-width: 1200px){
+        min-height: 620px;    
+    }
 }
 
 #card1, #card2, #card3 {
     @media screen and (min-width: 992px){
-        min-height: 610px;    
+        min-height: 710px;    
     }
 }
 
-#card4 {
-    @media screen and (min-width: 992px){
-        min-height: 450px;    
-    }
-}
+// #card4 {
+//     @media screen and (min-width: 992px){
+//         min-height: 450px;    
+//     }
+// }
